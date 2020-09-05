@@ -52,7 +52,7 @@ Private Sub Worksheet_Activate()
     End With
     
     'Format description cells
-    Call ApplyStyle(ReturnRange("B2:B4,B6:B11,B13:B19,D2:D20,F2:F12", "EditorManual"), "Description")
+    Call ApplyStyle(ReturnRange("B2:B4,B6:B11,B13:B19,D2:D20,F2:F13", "EditorManual"), "Description")
     
     ThisWorkbook.Worksheets("EditorManual").Calculate
     Call Optimize(False)
