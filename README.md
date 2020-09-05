@@ -8,7 +8,7 @@ It's best to be used in collaborative environments, where a set of tasks are don
 Above partially answers this question already: to track completion of daily tasks. Some workflows may require manual or semi-automatic processing done several people on regular basis. If it's just 1 or 2 tasks - that's easy. But if you have several dozens of operations and more than just one person - that may be problematic.
 
 # How?
-It's relatively simple, really. You can download Sample ARS.xlsm file and fill it in with your tasks. It has integrated `EditorManual`, that gives some explanation on what's what inside there and a bunch of settings you may want to utilize. Generally, it's expected that you will go to `VBA Editor` only to change password for the book: this should be done right at the top of `Security` module, you won't miss it.
+It's relatively simple, really. You can download Sample ARS.xlsm file and fill it in with your tasks. It has integrated `EditorManual`, that gives some explanation on what's what inside there and a bunch of settings you may want to utilize. Generally, it's expected that you will go to `VBA Editor` only to change password for the book: this should be done right at the top of `Security` module, you won't miss it. All buttons available on the sheet are activated using `Double-click`.
 
 # Features
 * Marking steps status with either drop-down menu or shortkeys, that can be customized in `Settings`
