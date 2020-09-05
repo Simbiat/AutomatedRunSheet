@@ -1,12 +1,3 @@
-VERSION 1.0 CLASS
-BEGIN
-  MultiUse = -1  'True
-END
-Attribute VB_Name = "Settings"
-Attribute VB_GlobalNameSpace = False
-Attribute VB_Creatable = False
-Attribute VB_PredeclaredId = True
-Attribute VB_Exposed = True
 Option Explicit
 Dim OldValue As String
 Dim OldText As String
@@ -51,8 +42,8 @@ Private Sub Worksheet_Change(ByVal Target As Range)
                     'Check if this is a custom setting, since we would like to protect system settings from removal
                     If RowRange.Cells(1, 1).Offset(-RowsCount, 2).Value2 = True Then
                         'Properly removing the row now
-                        RowRange.Cells(1, 1).Offset(-RowsCount, 0).EntireRow.Delete
                         Call WriteLog("Removed setting '" & RowRange.Cells(1, 1).Offset(-RowsCount, 0).Value2 & "'")
+                        RowRange.Cells(1, 1).Offset(-RowsCount, 0).EntireRow.Delete
                     End If
                 Next RowRange
                 Application.Run "UpdateRanges"
@@ -84,4 +75,3 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     
     Application.Run "NextVisible", Target
 End Sub
-
