@@ -58,8 +58,8 @@ Private Sub Worksheet_Change(ByVal Target As Range)
                             Application.Run "ButtonUpdate", RowRange.Cells(1, 1).Offset(-RowsCount, 8).Value2, True
                         End If
                         'Properly removing the row now
+                        Call WriteLog("Removed step '" & RowRange.Cells(1, 1).Offset(-RowsCount, 8).Value2 & "'")
                         RowRange.Cells(1, 1).Offset(-RowsCount, 0).EntireRow.Delete
-                        Call WriteLog("Removed step '" & RowRange.Cells(1, 1).Offset(-RowsCount, 9).Value2 & "'")
                     Next RowRange
                     Application.Run "UpdateRanges"
                 ElseIf ThisWorkbook.Worksheets("RunSheet").UsedRange.Rows.Count > UsedRows Then
