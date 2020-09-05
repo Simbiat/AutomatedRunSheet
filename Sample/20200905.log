@@ -1,0 +1,12 @@
+2020.09.05 12:11:43	SIMBIAT-PC	SIMBIAT-PC\simbi	Logged in
+2020.09.05 12:12:10	SIMBIAT-PC	SIMBIAT-PC\simbi	Removed step 'Step to be removed'
+2020.09.05 12:13:38	SIMBIAT-PC	SIMBIAT-PC\simbi	Setting 'SampleScreenshotFunction' is removed
+2020.09.05 12:13:38	SIMBIAT-PC	SIMBIAT-PC\simbi	Setting 'SampleScreenshotArguments' is removed
+2020.09.05 12:26:52	SIMBIAT-PC	SIMBIAT-PC\simbi	Changed Processing Block for step 'Test step' from 'Something' to 'Special Processing' ($H$5)
+2020.09.05 12:28:46	SIMBIAT-PC	SIMBIAT-PC\simbi	Changed Description for step 'Regular cell 2' from 'Old desription' to 'Just a regular step' ($J$10)
+2020.09.05 12:29:10	SIMBIAT-PC	SIMBIAT-PC\simbi	Setting 'EOCScreenshotFunction' renamed to 'SampleScreenshotFunction'
+2020.09.05 12:29:10	SIMBIAT-PC	SIMBIAT-PC\simbi	Setting 'EOCScreenshotArguments' renamed to 'SampleScreenshotArguments'
+2020.09.05 12:29:10	SIMBIAT-PC	SIMBIAT-PC\simbi	Changed Step Name from 'EOC Screenshot' to 'Sample Screenshot' ($I$9)
+2020.09.05 12:31:30	SIMBIAT-PC	SIMBIAT-PC\simbi	Switched Type for step 'Sample Screenshot' from 'Button' to 'Regular' ($G$9)
+2020.09.05 12:31:36	SIMBIAT-PC	SIMBIAT-PC\simbi	Switched Type for step 'Sample Screenshot' from 'Regular' to 'Button' ($G$9)
+2020.09.05 12:36:08	SIMBIAT-PC	SIMBIAT-PC\simbi	Logged out
