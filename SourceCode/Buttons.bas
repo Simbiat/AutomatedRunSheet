@@ -359,6 +359,10 @@ Private Function ButtonCount(ByVal ButtonID As String) As Integer
     Dim Button As Range
     'We need to count and rely on "Remove" flag, because if we are not removing we expect to find, at least, 1 button, and we are - no
     ButtonCount = 0
+    If RangeExists("RunSheetButtons", "RunSheet") = False Then
+        'No buttons set
+        Exit Function
+    End If
     For Each Button In ReturnRange("RunSheetButtons")
         If LCase(AlphaNumeric(Button.Value2)) = LCase(ButtonID) Then
             ButtonCount = ButtonCount + 1

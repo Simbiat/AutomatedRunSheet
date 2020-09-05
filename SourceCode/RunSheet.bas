@@ -102,7 +102,7 @@ skiperror:
 End Sub
 'Need to use double-click for buttons,because I was not able to make several solutions, I've found, work
 Private Sub WorkSheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean)
-    If Not ReturnRange("RunSheetButtons") Is Nothing Then
+    If RangeExists("RunSheetButtons", "RunSheet") = True Then
         Application.EnableEvents = False
         If Not Intersect(Target, ReturnRange("RunSheetButtons")) Is Nothing Then
             'Cancel standard behaviour
@@ -157,4 +157,3 @@ Private Sub WorkSheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean
         Application.EnableEvents = True
     End If
 End Sub
-
