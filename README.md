@@ -9,13 +9,19 @@ Above partially answers this question already: to track completion of daily task
 
 # How?
 It's relatively simple, really. You can download Sample ARS.xlsm file and fill it in with your tasks. It has integrated `EditorManual`, that gives some explanation on what's what inside there and a bunch of settings you may want to utilize. Generally, it's expected that you will go to `VBA Editor` only to change password for the book: this should be done right at the top of `Security` module, you won't miss it. All buttons available on the sheet are activated using `Double-click`.
-You can check screenshots of the RunSheet in `Screenshots` folder in repository:
-* EditorManual1.jpg: First half of Editor Manual
-* EditorManual2.jpg: Second half of Editor Manual
+You can check screenshots of the RunSheet below in `Screenshots` folder in repository:
 * Sample_EditorMode.jpg: how ARS.xlsm from `Sample` look like in `Editor Mode`
+![Sample_EditorMode.jpg](https://raw.githubusercontent.com/Simbiat/AutomatedRunSheet/master/Screenshots/Sample_EditorMode.jpg)
 * Settings.jpg: `Settings` sheet
+![Settings.jpg](https://raw.githubusercontent.com/Simbiat/AutomatedRunSheet/master/Screenshots/Settings.jpg)
+* EditorManual1.jpg: First half of Editor Manual
+![EditorManual1.jpg](https://raw.githubusercontent.com/Simbiat/AutomatedRunSheet/master/Screenshots/EditorManual1.jpg)
+* EditorManual2.jpg: Second half of Editor Manual
+![EditorManual2.jpg](https://raw.githubusercontent.com/Simbiat/AutomatedRunSheet/master/Screenshots/EditorManual2.jpg)
 * WorkCopy_EditorMode.jpg: how actual working copy of ARS.xlsm looks like in `Editor Mode` (descriptions are blurred for security purposes)
+![WorkCopy_EditorMode.jpg](https://raw.githubusercontent.com/Simbiat/AutomatedRunSheet/master/Screenshots/WorkCopy_EditorMode.jpg)
 * WorkCopy_UserMode.jpg: how actual working copy of ARS.xlsm looks like in `User Mode` (descriptions are blurred for security purposes)
+![WorkCopy_UserMode.jpg](https://raw.githubusercontent.com/Simbiat/AutomatedRunSheet/master/Screenshots/WorkCopy_UserMode.jpg)
 
 # Features
 * Marking steps status with either drop-down menu or shortkeys, that can be customized in `Settings`
