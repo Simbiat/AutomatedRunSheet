@@ -361,6 +361,8 @@ Public Function FindInFile(ByVal Haystack As String, ByVal Needle As String, Opt
         End If
         'Read file
         Hay = adoStream.ReadText
+        'Close file
+        adoStream.Close
         'Create regexp
         Dim Regexp As Object
         Set Regexp = CreateObject("vbscript.regexp")
