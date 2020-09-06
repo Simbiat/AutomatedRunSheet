@@ -478,8 +478,9 @@ Public Function InPrivate(ByVal URL As String, Optional Browser As String = "Edg
 End Function
 'Function to export all the code of the workbook. Requries programmatic access being allowed in MS Office Trust Center.
 Private Sub VBAExport()
-    Dim VBModule As Object
-    Dim VBAPath As String
+    Dim VBModule As Object, VBAPath As String
+    Dim adoStream As Object
+    Dim OldBas As String, NewBas As String
     VBAPath = GetSetting("ExportCodePath")
     If IsEmpty(VBAPath) = True Or VBAPath = "" Then
         'Set default path
@@ -489,9 +490,39 @@ Private Sub VBAExport()
         For Each VBModule In ThisWorkbook.VBProject.VBComponents
             'Excluding any modules designed specifically for 3rd parties
             If InStr(1, VBModule.Name, "custom", vbTextCompare) = 0 Then
-                VBModule.Export (VBAPath & VBModule.Name & ".bas")
+                If CheckFile(VBAPath & VBModule.Name & ".bas") = False Then
+                    VBModule.Export (VBAPath & VBModule.Name & ".bas")
+                    Debug.Print "Exported new '" & VBModule.Name & ".bas'"
+                Else
+                    'Export temporary copy if a file already exist
+                    VBModule.Export (VBAPath & VBModule.Name & ".bas.new")
+                    'Create stream to read from file
+                    Set adoStream = CreateObject("ADODB.Stream")
+                    'Set character set
+                    adoStream.Charset = "UTF-8"
+                    'Open stream
+                    adoStream.Open
+                    'Read old file to memory
+                    adoStream.LoadFromFile VBAPath & VBModule.Name & ".bas"
+                    OldBas = adoStream.ReadText
+                    'Read new file to memory
+                    adoStream.LoadFromFile VBAPath & VBModule.Name & ".bas.new"
+                    NewBas = adoStream.ReadText
+                    adoStream.Close
+                    If OldBas = NewBas Then
+                        'Delete new file
+                        Kill VBAPath & VBModule.Name & ".bas.new"
+                        Debug.Print "Skipped '" & VBModule.Name & ".bas' as same version"
+                    Else
+                        'Delete old file
+                        Kill VBAPath & VBModule.Name & ".bas"
+                        'Rename new file
+                        Name VBAPath & VBModule.Name & ".bas.new" As VBAPath & VBModule.Name & ".bas"
+                        Debug.Print "Updated '" & VBModule.Name & ".bas'"
+                    End If
+                End If
             End If
         Next VBModule
-        MsgBox "Modules exported!", vbOKOnly + vbInformation + vbApplicationModal, "Modules exported!"
+        Debug.Print "Modules exported!"
     End If
 End Sub
