@@ -77,8 +77,15 @@ Private Sub Workbook_Open()
     
     'Attempt to reduce issues with data validation (.Validate.Add) by disabling OneDrive's AutoSave
     Application.StatusBar = "Disabling OneDrive/SharePoint auto-saving..."
-    If ThisWorkbook.AutoSaveOn = True Then
-        ThisWorkbook.AutoSaveOn = False
+    'This helps avoid compile error if AutoSaveOn is not available
+    Dim oWB As Object
+    Set oWB = ThisWorkbook
+    If Val(Application.Version) > 15 Then
+        On Error Resume Next
+        If oWB.AutoSaveOn = True Then
+            oWB.AutoSaveOn = False
+        End If
+        On Error GoTo 0
     End If
     
     'Ensure autocalculation is disabled for some extra performance
